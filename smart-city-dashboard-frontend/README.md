@@ -1,125 +1,87 @@
-Smart City Dashboard - Frontend
-This repository contains the React frontend application for the Smart City Dashboard. It provides a user-friendly interface to visualize various smart city data, including sensor readings, and allows for user authentication.
-
-Table of Contents
-Features
-
-Technologies Used
-
-Setup and Installation
-
-Available Scripts
-
-Project Structure
-
-Screenshots
-
-Deployment
-
-Contributing
-
-License
+Smart City Dashboard Frontend
+This repository contains the frontend application for the Smart City Dashboard, built using React.js. It provides a user interface for authentication, displaying real-time sensor data, and managing user profiles.
 
 Features
-User Authentication: Secure registration and login functionalities.
+User Authentication: Login and registration forms with client-side validation using Formik and Yup.
 
-Protected Routes: Dashboard and Profile pages accessible only to authenticated users.
+Protected Routes: Dashboard and Profile screens are protected, requiring user authentication.
 
-Real-time Data Display: Visualization of sensor data (e.g., Temperature, Humidity, Air Quality, Traffic Count).
+Real-time Sensor Data Display: Connects to the backend via Socket.io to display live updates of sensor readings.
 
-Responsive UI: Designed to be accessible on various devices.
+User Profile Management: Displays authenticated user's details.
 
-[ADD MORE SPECIFIC FEATURES HERE, e.g., Data Filtering, Interactive Maps, User Management, etc.]
+Responsive Design: (Add if applicable, e.g., "Designed to be responsive across various devices.")
 
 Technologies Used
-React.js: Frontend library for building user interfaces.
+React.js: JavaScript library for building user interfaces.
 
 React Router DOM: For client-side routing.
 
 Axios: For making HTTP requests to the backend API.
 
-Formik & Yup: For robust form handling and validation.
+Formik & Yup: For form management and validation.
 
-[ADD ANY OTHER FRONTEND LIBRARIES/FRAMEWORKS, e.g., Chart.js, Tailwind CSS, Material-UI, etc.]
+Socket.io Client: For real-time communication with the backend.
 
-CSS: For styling (potentially with custom CSS or a framework).
+CSS: For styling.
 
-Setup and Installation
-Follow these steps to get the frontend running on your local machine.
+Getting Started
+Follow these steps to set up and run the frontend locally.
 
-Prerequisites:
+Prerequisites
+Node.js (v18 or higher recommended)
 
-Node.js (v18.x or higher recommended)
+pnpm (or npm/yarn)
 
-npm (Node Package Manager) or pnpm (recommended)
+The Smart City Dashboard Backend running locally or deployed.
 
-Steps:
-
+Installation
 Clone the repository:
 
-git clone [YOUR_GITHUB_FRONTEND_REPO_URL]
-cd smart-city-dashboard-frontend
+git clone [https://github.com/PLP-MERN-Stack-Development/week-8-capstone_-3-Stax.git](https://github.com/PLP-MERN-Stack-Development/week-8-capstone_-3-Stax.git)
+cd week-8-capstone_-3-Stax/smart-city-dashboard-frontend
+
+(Note: The main repository contains both frontend and backend.)
 
 Install dependencies:
 
-pnpm install # or npm install
+pnpm install
 
-Start the development server:
+Ensure Backend is Running:
+The frontend expects the backend API to be available.
 
-pnpm start # or npm start
+Local Backend: Ensure your backend is running on http://localhost:5000.
 
-The application will open in your browser at http://localhost:3000.
+Deployed Backend: The deployed frontend is configured to use the deployed backend, but for local development, you might need to temporarily adjust API_BASE_URL in src/App.jsx, src/components/LoginScreen.jsx, src/components/RegisterScreen.jsx, src/screens/ProfileScreen.jsx, and src/screens/DashboardScreen.jsx if you want it to point to your local backend. The current code points to the deployed backend.
 
-Important: This frontend requires the Smart City Dashboard Backend to be running on http://localhost:5000 for full functionality.
+Running the Application
+To start the frontend application:
 
-Available Scripts
-In the project directory, you can run:
+pnpm start
 
-pnpm start: Runs the app in development mode.
-
-pnpm build: Builds the app for production to the build folder.
-
-pnpm test: Launches the test runner.
-
-Project Structure
-smart-city-dashboard-frontend/
-├── public/                 # Public assets (e.g., index.html, favicon)
-├── src/
-│   ├── assets/             # Static assets like images, icons
-│   ├── components/         # Reusable UI components (e.g., LoginScreen, PrivateRoute)
-│   │   ├── LoginScreen.jsx
-│   │   ├── PrivateRoute.jsx
-│   │   └── RegisterScreen.jsx
-│   ├── screens/            # Page-level components (e.g., DashboardScreen, ProfileScreen)
-│   │   ├── DashboardScreen.jsx
-│   │   └── ProfileScreen.jsx
-│   ├── App.css             # Global application styles
-│   ├── App.jsx             # Main application component and routing
-│   ├── index.css           # Base styles
-│   └── main.jsx            # Entry point for React app
-├── package.json            # Project dependencies and scripts
-├── pnpm-lock.yaml          # pnpm lock file
-└── README.md               # This documentation file
-
-Screenshots
-Include screenshots of key features of your application here.
-
-Login Page:
-
-Register Page:
-
-Dashboard (Live Data):
-
-User Profile:
-
-[ADD MORE SCREENSHOTS AS NEEDED]
+The application will open in your browser, typically at http://localhost:3000.
 
 Deployment
-[Briefly describe how this frontend is deployed. E.g., "Deployed to Netlify/Vercel and served as static assets."]
-[Provide a link to the live deployed application here.]
+The frontend is deployed on Netlify.
+
+Deployed Frontend URL: https://imaginative-swan-dba653.netlify.app
+
+Deployed Backend URL: https://week-8-capstone_-3-stax.onrender.com
+
+Note on Client-Side Routing (Page Not Found Issue):
+When navigating directly to sub-paths (e.g., /login, /dashboard) on the deployed Netlify site, you might encounter a "Page not found" error. This is a common issue with Single Page Applications (SPAs) and static hosting. We have implemented a netlify.toml file (or _redirects file with a postbuild script) to redirect all unmatched paths to index.html for client-side routing. Despite these efforts, the issue has been persistent on direct URL access. However, navigating within the app after landing on the root (/) should function correctly. The core application functionality (authentication, data display, real-time updates) is working when accessed through the application's internal navigation.
+
+Usage
+Register: Create a new user account.
+
+Login: Log in with your registered credentials or the seeded admin user (admin@example.com, password password123).
+
+Dashboard: View real-time sensor data updates.
+
+Profile: View your user profile details.
 
 Contributing
-[Optional: Instructions for how others can contribute to your project.]
+(Optional: Instructions for how others can contribute to your project.)
 
 License
-[Specify your project's license, e.g., MIT, Apache 2.0, etc.]
+(Optional: Your project's license.)
