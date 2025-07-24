@@ -1,7 +1,7 @@
         # Dependencies
         /node_modules
-        /.pnpm-store # If using pnpm, ignore its global store artifacts within the project
-        /pnpm-lock.yaml # You might want to commit this for exact dependency versions, but often ignored in simpler setups
+        /.pnpm-store
+        /pnpm-lock.yaml
         
         # Environment variables
         .env

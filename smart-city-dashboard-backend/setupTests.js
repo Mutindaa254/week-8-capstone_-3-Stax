@@ -1,30 +1,23 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const app = require('./server'); // Import your Express app instance
-const request = require('supertest'); // Import supertest
 
 dotenv.config();
 
-let mongoServer;
-let serverInstance; // To hold the server instance for closing
+let dbConnection; // To hold the mongoose connection
 
 // Before all tests, connect to a test database
 beforeAll(async () => {
-  // Use a different environment variable for test MongoDB URI
-  // Or, if you have `mongodb-memory-server` installed, you can use that for a truly isolated test DB
-  // For simplicity, we'll use a separate DB name on localhost for now.
+  // Set NODE_ENV to 'test' to ensure test-specific configurations
+  process.env.NODE_ENV = 'test';
+  // Use a separate test database URI
   process.env.MONGO_URI = process.env.MONGO_URI_TEST || 'mongodb://localhost:27017/smartcity_test_db';
 
-  await mongoose.connect(process.env.MONGO_URI, {
+  // Connect to MongoDB specifically for tests
+  dbConnection = await mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-
-  // Start the server for testing
-  // We need to get the actual server instance from app.listen
-  serverInstance = app.listen(process.env.PORT || 5000, () => {
-    console.log(`Test server running on port ${process.env.PORT || 5000}`);
-  });
+  console.log('Connected to test MongoDB.');
 });
 
 // After each test, clear the database
@@ -36,16 +29,14 @@ afterEach(async () => {
   }
 });
 
-// After all tests, disconnect from the database and close the server
+// After all tests, disconnect from the database
 afterAll(async () => {
-  await mongoose.connection.close();
-  if (mongoServer) {
-    await mongoServer.stop();
+  if (dbConnection) {
+    await dbConnection.connection.close(); // Close the mongoose connection
   }
-  if (serverInstance) {
-    await serverInstance.close(); // Close the HTTP server
-  }
+  console.log('Disconnected from test MongoDB.');
+  // Reset NODE_ENV if needed for subsequent operations outside of Jest
+  process.env.NODE_ENV = 'development';
 });
 
-// Export app and request for use in test files
-module.exports = { app, request };
+// We no longer export 'app' or 'request' as we'll hit the live server
