@@ -1,47 +1,49 @@
-# MERN Stack Capstone Project
+# AgriRent - Farm Equipment & Land Rental Platform
 
-This assignment focuses on designing, developing, and deploying a comprehensive full-stack MERN application that showcases all the skills you've learned throughout the course.
+![AgriRent Logo](https://via.placeholder.com/150x50?text=AgriRent) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Assignment Overview
+A MERN stack platform connecting farmers with equipment owners and landowners, revolutionizing agricultural resource sharing.
 
-You will:
-1. Plan and design a full-stack MERN application
-2. Develop a robust backend with MongoDB, Express.js, and Node.js
-3. Create an interactive frontend with React.js
-4. Implement testing across the entire application
-5. Deploy the application to production
+## 🌱 Key Features
 
-## Getting Started
+- **Equipment Marketplace**: Rent tractors, harvesters, and other farm machinery
+- **Land Leasing**: Find available farmland with soil quality data
+- **Location-Based Search**: Find resources near your farm
+- **Secure Booking System**: With integrated payments
+- **User Reviews & Ratings**: Build trust in the farming community
 
-1. Accept the GitHub Classroom assignment
-2. Clone the repository to your local machine
-3. Follow the instructions in the `Week8-Assignment.md` file
-4. Plan, develop, and deploy your capstone project
+## 🚀 Live Demo
 
-## Files Included
+Check out our live demo: [https://agrirent-demo.vercel.app](https://agrirent-demo.vercel.app)
 
-- `Week8-Assignment.md`: Detailed assignment instructions
+## 🛠️ Technologies Used
 
-## Requirements
+**Frontend:**
+- React.js
+- Redux (State Management)
+- Material-UI (UI Components)
+- Leaflet (Maps)
+- Axios (HTTP Client)
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git and GitHub account
-- Accounts on deployment platforms (Render/Vercel/Netlify/etc.)
+**Backend:**
+- Node.js
+- Express.js
+- MongoDB (Database)
+- Mongoose (ODM)
+- JWT (Authentication)
 
-## Project Ideas
+**Services:**
+- Mapbox (Geolocation)
+- Razorpay (Payments)
+- Cloudinary (Image Storage)
 
-The `Week8-Assignment.md` file includes several project ideas, but you're encouraged to develop your own idea that demonstrates your skills and interests.
+## 📦 Installation
 
-## Submission
-
-Your project will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
-
-1. Commit and push your code regularly
-2. Include comprehensive documentation
-3. Deploy your application and add the live URL to your README.md
-4. Create a video demonstration and include the link in your README.md
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/agrirent.git
+   cd agrirent
 
 ## Resources
 
