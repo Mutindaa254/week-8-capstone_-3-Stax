@@ -15,7 +15,7 @@ A MERN stack platform connecting farmers with equipment owners and landowners, r
 
 ## 🚀 Live Demo
 
-Check out our live demo: [https://agrirent-demo.vercel.app](https://agrirent-demo.vercel.app)
+Check out our live demo: [https://agrishare-hub.lovable.app/](https://agrirent-demo.vercel.app)
 
 ## 🛠️ Technologies Used
 
