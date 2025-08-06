@@ -16,6 +16,7 @@ A MERN stack platform connecting farmers with equipment owners and landowners, r
 ## 🚀 Live Demo
 
 Check out our live demo: [https://agrishare-hub.lovable.app/](https://agrirent-demo.vercel.app)
+https://gamma.app/docs/AgriShare-The-Future-of-Farm-Resource-Sharing-ihsh0mcgzm7whbj?mode=doc
 
 ## 🛠️ Technologies Used
 
@@ -52,3 +53,4 @@ Check out our live demo: [https://agrishare-hub.lovable.app/](https://agrirent-d
 - [React Documentation](https://react.dev/)
 - [Node.js Documentation](https://nodejs.org/en/docs/)
 - [GitHub Classroom Guide](https://docs.github.com/en/education/manage-coursework-with-github-classroom) 
+
